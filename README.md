@@ -120,3 +120,7 @@ You can find an implementation for [watsonx.ai in the pull request](https://gith
 
 Note that this option has not been fully tested and will be updated later.
 
+
+## Acknowledgement
+
+Many thanks to my colleagues, Travis Jeanneret and Will Hawkins, for sharing info regarding running LLMs in VS Code.
