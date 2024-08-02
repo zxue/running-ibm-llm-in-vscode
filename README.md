@@ -24,7 +24,7 @@ Also, check out the 3-minute video by Nevyan Neykov, [VSCode: install AI code he
 
 ## Connecting LLMs running in IBM Cloud for VS Code
 
-Per chat with Continue support team on Discord, support for IBM wastsonx.ai LLMs is in the works. Check the status on the feature, [Implements WatsonX model provider](https://github.com/continuedev/continue/pull/1831)
+Per chat with Continue support team on Discord, support for IBM wastsonx.ai LLMs is in the works. Check the status on the feature, [Implements WatsonX model provider](https://github.com/continuedev/continue/pull/1831) and [Model Provider IBM watsonx](https://github.com/continuedev/continue/blob/dev/docs/docs/reference/Model%20Providers/watsonx.md)
 
 A workaround is to install [LiteLLM](https://docs.litellm.ai/docs/#basic-usage and run the service locally. Alternatively, you can deploy a [docker container](https://docs.litellm.ai/docs/proxy/deploy).
 
@@ -84,7 +84,9 @@ The new LLM, `granite-20b-code-instruct` is now available to use in VS Code. You
 
 ## Connecting LLMs hosted on prem in watsonx.ai for VS Code
 
-A suggested path available is to use the [self hosting models](https://docs.continue.dev/setup/configuration#self-hosting-an-open-source-model) option in Continue. 
+It's likely that once watsonx.ai is supported in Continue, which is currently under [dev review](https://github.com/continuedev/continue/blob/dev/docs/docs/reference/Model%20Providers/watsonx.md), you can configure and use LLMs directly.
+
+For now, you can use the [self hosting models](https://docs.continue.dev/setup/configuration#self-hosting-an-open-source-model) option in Continue. 
 
 For the latest on IBM Cloud Pak for Data and watsonx.ai authentication, check [IBM watsonx.ai APIClient](https://ibm.github.io/watsonx-ai-python-sdk/base.html#credentials.Credentials)
 
