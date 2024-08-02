@@ -38,6 +38,7 @@ By default, the service is running at http:0.0.0.0:4000.
 
 In the sample Continue config.json below, fill the curly brackets with the details as shown for the model, "watsonx/ibm/granite-20b-code-instruct". 
 
+```
 {
   "models": [
     {
@@ -67,6 +68,7 @@ In the sample Continue config.json below, fill the curly brackets with the detai
   },
   "allowAnonymousTelemetry": false
 }
+```
 
 The next step is to define a few [environment variables]((https://docs.litellm.ai/docs/providers/watsonx)) for watsonx.ai authentication.
 
