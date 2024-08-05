@@ -124,6 +124,16 @@ You can find an implementation for [watsonx.ai in the pull request](https://gith
 
 Note that this option has not been fully tested and will be updated later.
 
+## Use LLMs in VS Code
+
+To use a LLM in VS Code, press "CTRL L", or "Command L" on Mac. You should see the selected LLM in use. If you have multiple LLMs configured, toggle between LLMs, whether they are running locally or remotely.
+
+For example, type "Show me an example of connecting elasticserach in python" in the Continue pane, and you will see sample python code. Ask a follow up question, "show me how to use elasticsearch authentication in python". You should see something like this when IBM "granite-code:20b" is used.
+
+![Example of using LLM in Continue](media/use-llm-continue.png)
+
+
+
 
 ## Acknowledgement
 
