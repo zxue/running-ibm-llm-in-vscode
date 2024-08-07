@@ -22,18 +22,22 @@ Check [Continue's supported LLM providers](https://docs.continue.dev/setup/selec
 Also, check out the 3-minute video by Nevyan Neykov, [VSCode: install AI code helper IBM-granite](https://www.youtube.com/watch?v=VJvjgIx0a0I)
 
 
-## Connecting LLMs running in IBM Cloud for VS Code
+## Connecting LLMs running in IBM Cloud or On-prem for VS Code
 
-Per chat with Continue support team on Discord, support for IBM wastsonx.ai LLMs is in the works. Check the status on the feature, [Implements WatsonX model provider](https://github.com/continuedev/continue/pull/1831) and [Model Provider IBM watsonx](https://github.com/continuedev/continue/blob/dev/docs/docs/reference/Model%20Providers/watsonx.md)
+Continue supports IBM watsonx LLMs natively whether they are available in the cloud (saas) or software (on-prem deployment). To add a model, from the Continue panel, select WatsonX and provide required parameters, e.g. url, api key and project id. The configuration is saved in config.json automatically.
 
-A workaround is to install [LiteLLM](https://docs.litellm.ai/docs/#basic-usage and run the service locally. Alternatively, you can deploy a [docker container](https://docs.litellm.ai/docs/proxy/deploy).
+![IBM watsonx LLMs](media/ibm-llms.png)
+
+For the latest on IBM Cloud Pak for Data and watsonx.ai authentication, check [IBM watsonx.ai APIClient](https://ibm.github.io/watsonx-ai-python-sdk/base.html#credentials.Credentials)
+
+
+Alternatively, you can install [LiteLLM](https://docs.litellm.ai/docs/#basic-usage and run the service locally. Or you can deploy a [docker container](https://docs.litellm.ai/docs/proxy/deploy).
 
 ```
 pip install 'litellm'
 #pip install 'litellm[proxy]'
 litellm --model watsonx/ibm/granite-20b-code-instruct
 ```
-
 By default, the service is running at http:0.0.0.0:4000. 
 
 In the sample Continue config.json below, fill the curly brackets with the details as shown for the model, "watsonx/ibm/granite-20b-code-instruct". 
@@ -82,14 +86,11 @@ export WATSONX_DEPLOYMENT_SPACE_ID=xxx
 
 The new LLM, `granite-20b-code-instruct` is now available to use in VS Code. You can check the APIs in the browser, `http://0.0.0.0:4000`
 
-## Connecting LLMs hosted on prem in watsonx.ai for VS Code
+## Connecting to self-hosted LLMs for VS Code
 
-It's likely that once watsonx.ai is supported in Continue, which is currently under [dev review](https://github.com/continuedev/continue/blob/dev/docs/docs/reference/Model%20Providers/watsonx.md), you can configure and use LLMs directly.
+Check the supported [providers](https://docs.continue.dev/setup/select-provider) before going with the custom provider option.
 
-For now, you can use the [self hosting models](https://docs.continue.dev/setup/configuration#self-hosting-an-open-source-model) option in Continue. 
-
-For the latest on IBM Cloud Pak for Data and watsonx.ai authentication, check [IBM watsonx.ai APIClient](https://ibm.github.io/watsonx-ai-python-sdk/base.html#credentials.Credentials)
-
+More detail on [self hosting models](https://docs.continue.dev/setup/configuration#self-hosting-an-open-source-model). 
 
 ```
 {
@@ -122,7 +123,6 @@ export function modifyConfig(config: Config){
 
 You can find an implementation for [watsonx.ai in the pull request](https://github.com/NoeSamaille/continue-watsonx/blob/main/src/watsonx.ts).
 
-Note that this option has not been fully tested and will be updated later.
 
 ## Use LLMs in VS Code
 
@@ -131,9 +131,6 @@ To use a LLM in VS Code, press "CTRL L", or "Command L" on Mac. You should see t
 For example, type "Show me an example of connecting elasticserach in python" in the Continue pane, and you will see sample python code. Ask a follow up question, "show me how to use elasticsearch authentication in python". You should see something like this when IBM "granite-code:20b" is used.
 
 ![Example of using LLM in Continue](media/use-llm-continue.png)
-
-
-
 
 ## Acknowledgement
 
